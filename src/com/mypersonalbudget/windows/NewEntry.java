@@ -13,17 +13,20 @@ import java.util.Date;
  *
  * @author Krishna
  */
-public class NewJFrame extends javax.swing.JFrame {
+public class NewEntry extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public NewJFrame() {
+    public NewEntry() {
         initComponents();
         Date dNow = new Date();
-        SimpleDateFormat ft = new SimpleDateFormat("dd/MM/YYYY hh:mm:ss");
+        SimpleDateFormat ft = new SimpleDateFormat("yyyy-M-dd");
         String entryDate = ft.format(dNow);
         date.setText(entryDate);
+        Double d = new SumOfMonth().getSumOfMonth();
+        String sum = d.toString();
+        sumOfThisMonth.setText(sum);
     }
 
     /**
@@ -50,10 +53,14 @@ public class NewJFrame extends javax.swing.JFrame {
         Submit = new javax.swing.JLabel();
         Clear = new javax.swing.JLabel();
         moneyspend = new javax.swing.JLabel();
-        moneySpendBy = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        sumOfThisMonth = new javax.swing.JLabel();
+        moneySpendBy = new javax.swing.JComboBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         File = new javax.swing.JMenu();
         newEntry = new javax.swing.JMenuItem();
+        home = new javax.swing.JMenuItem();
         Edit = new javax.swing.JMenu();
         editEntry = new javax.swing.JMenuItem();
         deleteEntry = new javax.swing.JMenuItem();
@@ -63,7 +70,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("New Entry");
         setBackground(new java.awt.Color(51, 255, 255));
         setPreferredSize(new java.awt.Dimension(1100, 700));
@@ -107,10 +114,39 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         Clear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/clear button.png"))); // NOI18N
+        Clear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ClearMouseClicked(evt);
+            }
+        });
 
         moneyspend.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
         moneyspend.setForeground(new java.awt.Color(255, 255, 255));
         moneyspend.setText("Money Spend By");
+
+        jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("This Month Total  :");
+
+        sumOfThisMonth.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        sumOfThisMonth.setForeground(new java.awt.Color(204, 0, 0));
+        sumOfThisMonth.setText("jLabel2");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(sumOfThisMonth)
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(sumOfThisMonth, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+
+        moneySpendBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "                 ", "Self", "Mom", "Dad", "Others" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -121,7 +157,6 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(175, 175, 175)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(itemDescriptionLabel)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(moneyspend)
@@ -131,15 +166,21 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(itemName, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(date, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                                .addComponent(cost, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(moneySpendBy, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(Submit)
                                 .addGap(18, 18, 18)
-                                .addComponent(Clear)))))
+                                .addComponent(Clear))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(moneySpendBy, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(date, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cost, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))))
+                    .addComponent(itemDescriptionLabel)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(181, 181, 181)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -148,7 +189,11 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(headImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(newEntryHeader)
-                .addGap(49, 49, 49)
+                .addGap(13, 13, 13)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(itemName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(itenNameLabel))
@@ -162,8 +207,8 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(moneySpendBy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(moneyspend))
+                    .addComponent(moneyspend)
+                    .addComponent(moneySpendBy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,7 +217,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Submit)
                     .addComponent(Clear))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(-14336,true));
@@ -180,10 +225,29 @@ public class NewJFrame extends javax.swing.JFrame {
         jMenuBar1.setFont(new java.awt.Font("Dialog", 1, 18));
 
         File.setText("File");
+        File.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FileActionPerformed(evt);
+            }
+        });
 
         newEntry.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         newEntry.setText("New Entry");
+        newEntry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newEntryActionPerformed(evt);
+            }
+        });
         File.add(newEntry);
+
+        home.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        home.setText("Home");
+        home.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeActionPerformed(evt);
+            }
+        });
+        File.add(home);
 
         jMenuBar1.add(File);
 
@@ -191,6 +255,11 @@ public class NewJFrame extends javax.swing.JFrame {
 
         editEntry.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         editEntry.setText("Edit Entry");
+        editEntry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editEntryActionPerformed(evt);
+            }
+        });
         Edit.add(editEntry);
 
         deleteEntry.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
@@ -241,7 +310,7 @@ public class NewJFrame extends javax.swing.JFrame {
         addentry.setItemName(itemName.getText());
         addentry.setItemCost(Double.parseDouble(cost.getText()));
         addentry.setDate(date.getText());
-        addentry.setMoneySpendBy(moneySpendBy.getText());
+        addentry.setMoneySpendBy(moneySpendBy.getSelectedItem().toString());
         addentry.setItemDesc(description.getText());
         
         SessFactory sessfactory = new SessFactory();
@@ -256,17 +325,49 @@ public class NewJFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Not Saved. Something entered wrong.");
         
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        Double d = new SumOfMonth().getSumOfMonth();
+        sumOfThisMonth.setText(d.toString());
+        ClearMouseClicked(evt);
         
     }//GEN-LAST:event_SubmitMouseClicked
+
+    private void ClearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClearMouseClicked
+
+        itemName.setText(null);
+        cost.setText(null);
+        Date dNow = new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("yyyy-M-dd");
+        String entryDate = ft.format(dNow);
+        date.setText(entryDate);
+        moneySpendBy.setSelectedItem("");
+        description.setText("");
+        
+        
+    }//GEN-LAST:event_ClearMouseClicked
+
+    private void newEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newEntryActionPerformed
+
+        this.dispose();
+        NewEntry ne = new NewEntry();
+        ne.setVisible(true);
+    }//GEN-LAST:event_newEntryActionPerformed
+
+    private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
+        this.dispose();
+        HomePage  hm = new HomePage();
+        hm.setVisible(true);
+    }//GEN-LAST:event_homeActionPerformed
+
+    private void FileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FileActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FileActionPerformed
+
+    private void editEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEntryActionPerformed
+
+        this.dispose();
+        EditEntry ee = new EditEntry();
+        ee.setVisible(true);
+    }//GEN-LAST:event_editEntryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -285,20 +386,21 @@ public class NewJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewEntry.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewEntry.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewEntry.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewEntry.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame().setVisible(true);
+                new NewEntry().setVisible(true);
             }
         });
     }
@@ -317,19 +419,23 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextArea description;
     private javax.swing.JMenuItem editEntry;
     private javax.swing.JLabel headImage;
+    private javax.swing.JMenuItem home;
     private javax.swing.JLabel itemDescriptionLabel;
     private javax.swing.JTextField itemName;
     private javax.swing.JLabel itenNameLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField moneySpendBy;
+    private javax.swing.JComboBox moneySpendBy;
     private javax.swing.JLabel moneyspend;
     private javax.swing.JMenuItem newEntry;
     private javax.swing.JLabel newEntryHeader;
+    private javax.swing.JLabel sumOfThisMonth;
     // End of variables declaration//GEN-END:variables
 }
