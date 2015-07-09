@@ -75,7 +75,7 @@ public class NewEntry extends javax.swing.JFrame {
         setBackground(new java.awt.Color(51, 255, 255));
         setPreferredSize(new java.awt.Dimension(1100, 700));
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 153, 204));
 
         headImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/head1.jpg"))); // NOI18N
         headImage.setMaximumSize(new java.awt.Dimension(1100, 120));
