@@ -167,9 +167,9 @@ public class EditEntry extends javax.swing.JFrame {
         moneyspend.setText("Money Spend By");
 
         jTable1.setAutoCreateRowSorter(true);
-        jTable1.setBackground(new java.awt.Color(255, 255, 0));
+        jTable1.setBackground(new java.awt.Color(204, 255, 255));
         jTable1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jTable1.setFont(new java.awt.Font("Bell MT", 0, 16)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Baskerville Old Face", 0, 16)); // NOI18N
         jTable1.setForeground(new java.awt.Color(0, 51, 51));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
