@@ -108,7 +108,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
 
-        headImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/head.gif"))); // NOI18N
+        headImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/head1.jpg"))); // NOI18N
         headImage.setMaximumSize(new java.awt.Dimension(1100, 120));
         headImage.setPreferredSize(new java.awt.Dimension(1100, 120));
 
