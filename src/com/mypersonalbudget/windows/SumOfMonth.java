@@ -18,20 +18,21 @@ import org.hibernate.Session;
  * @author Krishna
  */
 public class SumOfMonth {
+    Calendar calendar = Calendar.getInstance();
+    int month = (calendar.get(Calendar.MONTH))+1;
+    int year = (calendar.get(Calendar.YEAR));
     
-       
+    double sum1=0;   
+    
     public double getSumOfMonth()
     {
-        double sum1=0;
+        
+        
         try
         {
-            Calendar calendar = Calendar.getInstance();
-            int month = (calendar.get(Calendar.MONTH))+1;
-            int year = (calendar.get(Calendar.YEAR));
-            System.out.println(month);
+            
             Session session = new SessFactory().getSessionFactory().openSession();
             session.beginTransaction();
-            AddEntry ae = new AddEntry();
             Query query1= session.createQuery("select sum(itemCost) from AddEntry where date BETWEEN '"+year+"-"+month+"-01' AND '"+year+"-"+month+"-31')");
             List sum = query1.list();
             session.getTransaction().commit();
@@ -52,6 +53,92 @@ public class SumOfMonth {
         }
         return sum1;
     }
+    
+     public double getMomSumOfMonth()
+    {
+        
+        try
+        {
+            Session session = new SessFactory().getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query1= session.createQuery("select sum(itemCost) from AddEntry where ((date BETWEEN '"+year+"-"+month+"-01' AND '"+year+"-"+month+"-31') AND (moneySpendBy='Mom'))");
+            List sum = query1.list();
+            session.getTransaction().commit();
+            session.close();
+            double total = (Double)sum.get(0);
+            
+            if(total>1){
+                sum1 = total;
+                return sum1;
+            }
+            
+            else {System.out.println("else executed");return sum1=0;}
+            
+        }catch(Exception e){
+            
+            e.printStackTrace();
+        
+        }
+        return sum1;
+    }
+    
+     
+      public double getDadSumOfMonth()
+    {
+        
+        try
+        {
+            Session session = new SessFactory().getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query1= session.createQuery("select sum(itemCost) from AddEntry where ((date BETWEEN '"+year+"-"+month+"-01' AND '"+year+"-"+month+"-31') AND (moneySpendBy='Dad'))");
+            List sum = query1.list();
+            session.getTransaction().commit();
+            session.close();
+            double total = (Double)sum.get(0);
+            
+            if(total>1){
+                sum1 = total;
+                return sum1;
+            }
+            
+            else {System.out.println("else executed");return sum1=0;}
+            
+        }catch(Exception e){
+            
+            e.printStackTrace();
+        
+        }
+        return sum1;
+    }
+    
+     public double getKrishnaSumOfMonth()
+    {
+        
+        try
+        {
+            Session session = new SessFactory().getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query1= session.createQuery("select sum(itemCost) from AddEntry where ((date BETWEEN '"+year+"-"+month+"-01' AND '"+year+"-"+month+"-31') AND (moneySpendBy='Self'))");
+            List sum = query1.list();
+            session.getTransaction().commit();
+            session.close();
+            double total = (Double)sum.get(0);
+            
+            if(total>1){
+                sum1 = total;
+                return sum1;
+            }
+            
+            else {System.out.println("else executed");return sum1=0;}
+            
+        }catch(Exception e){
+            
+            e.printStackTrace();
+        
+        }
+        return sum1;
+    }  
+      
     public static void main(String args[]){
         SumOfMonth sm = new SumOfMonth();
         sm.getSumOfMonth();

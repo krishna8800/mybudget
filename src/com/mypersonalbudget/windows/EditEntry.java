@@ -198,7 +198,10 @@ public class EditEntry extends javax.swing.JFrame {
             }
         });
         jTable1.setGridColor(new java.awt.Color(0, 153, 153));
-        jTable1.setSelectionBackground(new java.awt.Color(255, 0, 0));
+        jTable1.setRequestFocusEnabled(false);
+        jTable1.setRowHeight(24);
+        jTable1.setSelectionBackground(new java.awt.Color(0, 0, 153));
+        jTable1.setSelectionForeground(new java.awt.Color(255, 255, 0));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
