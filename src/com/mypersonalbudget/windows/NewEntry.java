@@ -5,6 +5,7 @@
  */
 package com.mypersonalbudget.windows;
 import com.bean.AddEntry;
+import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import org.hibernate.Session;
@@ -94,6 +95,12 @@ public class NewEntry extends javax.swing.JFrame {
         itenNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         itenNameLabel.setText("Item Name");
 
+        cost.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                costKeyPressed(evt);
+            }
+        });
+
         dateLabel.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
         dateLabel.setForeground(new java.awt.Color(255, 255, 255));
         dateLabel.setText("Date");
@@ -104,6 +111,11 @@ public class NewEntry extends javax.swing.JFrame {
 
         description.setColumns(20);
         description.setRows(5);
+        description.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                descriptionKeyPressed(evt);
+            }
+        });
         jScrollPane1.setViewportView(description);
 
         Submit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Submit  button.png"))); // NOI18N
@@ -147,6 +159,11 @@ public class NewEntry extends javax.swing.JFrame {
         );
 
         moneySpendBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "                 ", "Self", "Mom", "Dad", "Others" }));
+        moneySpendBy.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                moneySpendByKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -368,6 +385,34 @@ public class NewEntry extends javax.swing.JFrame {
         EditEntry ee = new EditEntry();
         ee.setVisible(true);
     }//GEN-LAST:event_editEntryActionPerformed
+
+    private void descriptionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_descriptionKeyPressed
+        
+         if (evt.getKeyCode()==KeyEvent.VK_ENTER){
+            
+             SubmitMouseClicked(null);
+        }
+        
+        
+    }//GEN-LAST:event_descriptionKeyPressed
+
+    private void moneySpendByKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_moneySpendByKeyPressed
+        
+         if (evt.getKeyCode()==KeyEvent.VK_ENTER){
+            
+             SubmitMouseClicked(null);
+        }
+        
+    }//GEN-LAST:event_moneySpendByKeyPressed
+
+    private void costKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_costKeyPressed
+        
+         if (evt.getKeyCode()==KeyEvent.VK_ENTER){
+            
+             SubmitMouseClicked(null);
+        }
+        
+    }//GEN-LAST:event_costKeyPressed
 
     /**
      * @param args the command line arguments
