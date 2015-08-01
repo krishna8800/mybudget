@@ -101,6 +101,8 @@ public class EditEntry extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         sumOfThisMonth = new javax.swing.JLabel();
         moneySpendBy = new javax.swing.JComboBox();
+        searchKey = new javax.swing.JTextField();
+        SearchButton = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         File = new javax.swing.JMenu();
         newEntry = new javax.swing.JMenuItem();
@@ -109,10 +111,7 @@ public class EditEntry extends javax.swing.JFrame {
         editEntry = new javax.swing.JMenuItem();
         deleteEntry = new javax.swing.JMenuItem();
         View = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Edit Entry");
@@ -249,7 +248,14 @@ public class EditEntry extends javax.swing.JFrame {
             .addComponent(sumOfThisMonth, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
-        moneySpendBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "             ", "Self", "Mom", "Dad", "Others" }));
+        moneySpendBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Venki", "Manju" }));
+
+        SearchButton.setText("Search");
+        SearchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -257,16 +263,19 @@ public class EditEntry extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(headImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(newEntryHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(newEntryHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(searchKey, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(SearchButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 795, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 795, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -308,13 +317,16 @@ public class EditEntry extends javax.swing.JFrame {
                 .addComponent(headImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(newEntryHeader)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(refreshButton)
                         .addComponent(deleteButton))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(searchKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SearchButton)))
+                    .addComponent(newEntryHeader))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -398,21 +410,14 @@ public class EditEntry extends javax.swing.JFrame {
 
         View.setText("View");
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem5.setText("View Items By Date");
-        View.add(jMenuItem5);
-
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setText("View Items By Month");
-        View.add(jMenuItem4);
-
-        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem6.setText("View Items By Week");
-        View.add(jMenuItem6);
-
-        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_4, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem7.setText("View Items By Year");
-        View.add(jMenuItem7);
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setText("View");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        View.add(jMenuItem1);
 
         jMenuBar1.add(View);
 
@@ -599,13 +604,55 @@ public class EditEntry extends javax.swing.JFrame {
         
     }//GEN-LAST:event_ClearMouseClicked
 
+    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
+        
+        DefaultTableModel tablemodel =(DefaultTableModel) jTable1.getModel();
+        tablemodel.setNumRows(0);
+        try {
+
+            String searchkey = searchKey.getText();
+            Session session = new SessFactory().getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery("from AddEntry where itemName LIKE '"+searchkey+"%' ORDER BY date DESC");
+            List<AddEntry> entries = query.list();
+            
+            for (AddEntry e : entries) {
+                System.out.println(".......................... "+e.getItemName());
+
+                tablemodel.addRow(new Object[]{
+                    e.getId(),e.getItemName(), e.getItemCost(), e.getMoneySpendBy(), e.getDate(), e.getItemDesc()
+                });
+
+            }
+            session.getTransaction().commit();
+            session.close();
+                     
+        }catch(Exception e){
+            
+        JOptionPane.showMessageDialog(this,"Error while loading table.");
+        e.printStackTrace();
+        }        
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_SearchButtonActionPerformed
+
     private void newEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newEntryActionPerformed
 
         this.dispose();
         NewEntry ne = new NewEntry();
         ne.setVisible(true);
-
     }//GEN-LAST:event_newEntryActionPerformed
+
+    private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
+        this.dispose();
+        HomePage  hm = new HomePage();
+        hm.setVisible(true);
+    }//GEN-LAST:event_homeActionPerformed
 
     private void FileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FileActionPerformed
         // TODO add your handling code here:
@@ -616,14 +663,14 @@ public class EditEntry extends javax.swing.JFrame {
         this.dispose();
         EditEntry ee = new EditEntry();
         ee.setVisible(true);
-
     }//GEN-LAST:event_editEntryActionPerformed
 
-    private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         this.dispose();
-        HomePage  hm = new HomePage();
-        hm.setVisible(true);
-    }//GEN-LAST:event_homeActionPerformed
+        ViewFrame v = new ViewFrame();
+        v.setVisible(true);
+
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -664,6 +711,7 @@ public class EditEntry extends javax.swing.JFrame {
     private javax.swing.JLabel Clear;
     private javax.swing.JMenu Edit;
     private javax.swing.JMenu File;
+    private javax.swing.JButton SearchButton;
     private javax.swing.JLabel Submit;
     private javax.swing.JMenu View;
     private javax.swing.JTextField cost;
@@ -681,10 +729,7 @@ public class EditEntry extends javax.swing.JFrame {
     private javax.swing.JLabel itenNameLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -695,6 +740,7 @@ public class EditEntry extends javax.swing.JFrame {
     private javax.swing.JMenuItem newEntry;
     private javax.swing.JLabel newEntryHeader;
     private javax.swing.JButton refreshButton;
+    private javax.swing.JTextField searchKey;
     private javax.swing.JLabel sumOfThisMonth;
     // End of variables declaration//GEN-END:variables
 
