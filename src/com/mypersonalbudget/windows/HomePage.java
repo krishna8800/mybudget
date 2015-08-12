@@ -114,7 +114,6 @@ public class HomePage extends javax.swing.JFrame {
         home = new javax.swing.JMenuItem();
         Edit = new javax.swing.JMenu();
         editEntry = new javax.swing.JMenuItem();
-        deleteEntry = new javax.swing.JMenuItem();
         View = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -323,10 +322,6 @@ public class HomePage extends javax.swing.JFrame {
         });
         Edit.add(editEntry);
 
-        deleteEntry.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        deleteEntry.setText("Delete Entry");
-        Edit.add(deleteEntry);
-
         jMenuBar1.add(Edit);
 
         View.setText("View");
@@ -412,7 +407,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JMenu File;
     private javax.swing.JMenu View;
     private javax.swing.JButton backUpButton;
-    private javax.swing.JMenuItem deleteEntry;
     private javax.swing.JMenuItem editEntry;
     private javax.swing.JLabel headImage;
     private javax.swing.JMenuItem home;

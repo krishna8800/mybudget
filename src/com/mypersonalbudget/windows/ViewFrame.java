@@ -78,7 +78,6 @@ public class ViewFrame extends javax.swing.JFrame {
         home = new javax.swing.JMenuItem();
         Edit = new javax.swing.JMenu();
         editEntry = new javax.swing.JMenuItem();
-        deleteEntry = new javax.swing.JMenuItem();
         View = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -389,10 +388,6 @@ public class ViewFrame extends javax.swing.JFrame {
         });
         Edit.add(editEntry);
 
-        deleteEntry.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        deleteEntry.setText("Delete Entry");
-        Edit.add(deleteEntry);
-
         jMenuBar1.add(Edit);
 
         View.setText("View");
@@ -691,19 +686,19 @@ public class ViewFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FileActionPerformed
 
-    private void editEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEntryActionPerformed
-
-        this.dispose();
-        EditEntry ee = new EditEntry();
-        ee.setVisible(true);
-    }//GEN-LAST:event_editEntryActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         this.dispose();
         ViewFrame v = new ViewFrame();
         v.setVisible(true);
 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void editEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEntryActionPerformed
+
+        this.dispose();
+        EditEntry ee = new EditEntry();
+        ee.setVisible(true);
+    }//GEN-LAST:event_editEntryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -750,7 +745,6 @@ public class ViewFrame extends javax.swing.JFrame {
     private javax.swing.JTextField date2;
     private javax.swing.JTextField dateText;
     private javax.swing.JButton deleteButton;
-    private javax.swing.JMenuItem deleteEntry;
     private javax.swing.JMenuItem editEntry;
     private javax.swing.JLabel headImage;
     private javax.swing.JMenuItem home;

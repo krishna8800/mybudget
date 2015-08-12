@@ -109,7 +109,6 @@ public class EditEntry extends javax.swing.JFrame {
         home = new javax.swing.JMenuItem();
         Edit = new javax.swing.JMenu();
         editEntry = new javax.swing.JMenuItem();
-        deleteEntry = new javax.swing.JMenuItem();
         View = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -401,10 +400,6 @@ public class EditEntry extends javax.swing.JFrame {
             }
         });
         Edit.add(editEntry);
-
-        deleteEntry.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        deleteEntry.setText("Delete Entry");
-        Edit.add(deleteEntry);
 
         jMenuBar1.add(Edit);
 
@@ -719,7 +714,6 @@ public class EditEntry extends javax.swing.JFrame {
     private javax.swing.JTextField date;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JButton deleteButton;
-    private javax.swing.JMenuItem deleteEntry;
     private javax.swing.JTextArea description;
     private javax.swing.JMenuItem editEntry;
     private javax.swing.JLabel headImage;
