@@ -405,7 +405,12 @@ public class HomePage extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        
-        
+        try{
+        new MysqlToXls().generateXls("entrys", "D:\\MyBudget\\Budget.xls");
+        JOptionPane.showMessageDialog(null,"Excel Created Successfully");
+        }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"Error while creating excel file.");
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

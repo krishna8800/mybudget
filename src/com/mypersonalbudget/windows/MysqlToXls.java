@@ -69,7 +69,7 @@ public class MysqlToXls {
     connection.close();
   }
  
-  public static void main(String[] args) {
+  /*public static void main(String[] args) {
     try {
       new MysqlToXls().generateXls("entrys", "D:\\MyBudget\\Budget.xls");
       JOptionPane.showMessageDialog(null,"Excel Created Successfully");
@@ -78,5 +78,5 @@ public class MysqlToXls {
       e.printStackTrace();
       JOptionPane.showMessageDialog(null,"Error while creating excel file.");
     }
-  }
+  }*/
 }
