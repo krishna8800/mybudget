@@ -139,6 +139,35 @@ public class SumOfMonth {
         return sum1;
     }  
       
+    public double getSumForView(String query)throws NullPointerException
+    {
+        
+        try
+        {
+            System.out.println(query);
+            Session session = new SessFactory().getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query1= session.createQuery(query);
+            List sum = query1.list();
+            session.getTransaction().commit();
+            session.close();
+            double total = (Double)sum.get(0);
+            
+            if(total>1){
+                sum1 = total;
+                return sum1;
+            }
+            
+            else {System.out.println("else executed");return sum1=0;}
+            
+        }catch(Exception e){
+            
+            e.printStackTrace();
+        
+        }
+        return sum1;
+    } 
+     
     public static void main(String args[]){
         SumOfMonth sm = new SumOfMonth();
         sm.getSumOfMonth();

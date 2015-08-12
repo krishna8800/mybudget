@@ -69,6 +69,9 @@ public class ViewFrame extends javax.swing.JFrame {
         searchBetweenDates = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        sumOfResult = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         File = new javax.swing.JMenu();
         newEntry = new javax.swing.JMenuItem();
@@ -91,7 +94,7 @@ public class ViewFrame extends javax.swing.JFrame {
         newEntryHeader.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         newEntryHeader.setForeground(new java.awt.Color(255, 255, 0));
         newEntryHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        newEntryHeader.setText("Edit Entry");
+        newEntryHeader.setText("View");
 
         jTable1.setAutoCreateRowSorter(true);
         jTable1.setBackground(new java.awt.Color(204, 255, 255));
@@ -219,6 +222,28 @@ public class ViewFrame extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("jLabel2");
 
+        jLabel3.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("This Month Total  :");
+
+        sumOfResult.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        sumOfResult.setForeground(new java.awt.Color(204, 0, 0));
+        sumOfResult.setText("   ");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(sumOfResult)
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(sumOfResult, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -232,7 +257,11 @@ public class ViewFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(searchKey, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(SearchButton))
+                        .addComponent(SearchButton)
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 795, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -280,10 +309,13 @@ public class ViewFrame extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(refreshButton)
                         .addComponent(deleteButton))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(searchKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(SearchButton))
-                    .addComponent(newEntryHeader))
+                    .addComponent(newEntryHeader)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(searchKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SearchButton))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -496,6 +528,9 @@ public class ViewFrame extends javax.swing.JFrame {
             }
             session.getTransaction().commit();
             session.close();
+            Double d = new SumOfMonth().getSumForView("select sum(itemCost) from AddEntry where date = '"+date+"'");
+            String sum = d.toString();
+            sumOfResult.setText(sum);
                      
         }catch(Exception e){
             
@@ -588,6 +623,9 @@ public class ViewFrame extends javax.swing.JFrame {
             }
             session.getTransaction().commit();
             session.close();
+            Double d = new SumOfMonth().getSumForView("select sum(itemCost) from AddEntry where date BETWEEN '"+d1+"' AND '"+d2+"'");
+            String sum = d.toString();
+            sumOfResult.setText(sum);
                      
         }catch(Exception e){
             
@@ -622,6 +660,10 @@ public class ViewFrame extends javax.swing.JFrame {
             }
             session.getTransaction().commit();
             session.close();
+            Double d = new SumOfMonth().getSumForView("select sum(itemCost) from AddEntry where date BETWEEN '"+year+"-"+month+"-01' AND '"+year+"-"+month+"-31'");
+            String sum = d.toString();
+            sumOfResult.setText(sum);
+            
                      
         }catch(Exception e){
             
@@ -714,9 +756,11 @@ public class ViewFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JComboBox monthNo;
@@ -727,6 +771,7 @@ public class ViewFrame extends javax.swing.JFrame {
     private javax.swing.JButton searchDate;
     private javax.swing.JTextField searchKey;
     private javax.swing.JButton searchMonth;
+    private javax.swing.JLabel sumOfResult;
     private javax.swing.JRadioButton viewBetween;
     private javax.swing.ButtonGroup viewButtonGroup;
     private javax.swing.JRadioButton viewByDate;
