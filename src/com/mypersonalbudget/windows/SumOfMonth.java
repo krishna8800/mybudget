@@ -24,7 +24,7 @@ public class SumOfMonth {
     
     double sum1=0;   
     
-    public double getSumOfMonth()
+    public double getSumOfMonth()throws NullPointerException
     {
         
         
@@ -54,7 +54,7 @@ public class SumOfMonth {
         return sum1;
     }
     
-     public double getMomSumOfMonth()
+     public double getMomSumOfMonth()throws NullPointerException
     {
         
         try
@@ -83,7 +83,7 @@ public class SumOfMonth {
     }
     
      
-      public double getDadSumOfMonth()
+      public double getDadSumOfMonth() throws NullPointerException
     {
         
         try
@@ -111,7 +111,7 @@ public class SumOfMonth {
         return sum1;
     }
     
-     public double getKrishnaSumOfMonth()
+     public double getKrishnaSumOfMonth()throws NullPointerException
     {
         
         try

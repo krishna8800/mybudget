@@ -107,7 +107,8 @@ public class HomePage extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        backUpButton = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         File = new javax.swing.JMenu();
         newEntry = new javax.swing.JMenuItem();
@@ -207,7 +208,14 @@ public class HomePage extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(204, 0, 0));
         jLabel8.setText("jLabel8");
 
-        jButton1.setText("Back Up Data");
+        backUpButton.setText("Back Up Data");
+        backUpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backUpButtonActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Restore");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -236,7 +244,9 @@ public class HomePage extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton1))
+                                    .addComponent(jButton2)
+                                    .addGap(27, 27, 27)
+                                    .addComponent(backUpButton))
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -258,7 +268,9 @@ public class HomePage extends javax.swing.JFrame {
                                 .addComponent(jLabel1))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
-                                .addComponent(jButton1)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(backUpButton)
+                                    .addComponent(jButton2))))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45)
@@ -385,6 +397,12 @@ public class HomePage extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void backUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backUpButtonActionPerformed
+       
+        new BackUpData().Backupdbtosql();
+        
+    }//GEN-LAST:event_backUpButtonActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -400,11 +418,12 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JMenu Edit;
     private javax.swing.JMenu File;
     private javax.swing.JMenu View;
+    private javax.swing.JButton backUpButton;
     private javax.swing.JMenuItem deleteEntry;
     private javax.swing.JMenuItem editEntry;
     private javax.swing.JLabel headImage;
     private javax.swing.JMenuItem home;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
