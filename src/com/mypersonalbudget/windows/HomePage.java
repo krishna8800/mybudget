@@ -108,7 +108,6 @@ public class HomePage extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         backUpButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         File = new javax.swing.JMenu();
         newEntry = new javax.swing.JMenuItem();
@@ -215,8 +214,6 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Restore");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -244,8 +241,6 @@ public class HomePage extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton2)
-                                    .addGap(27, 27, 27)
                                     .addComponent(backUpButton))
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -268,9 +263,7 @@ public class HomePage extends javax.swing.JFrame {
                                 .addComponent(jLabel1))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(backUpButton)
-                                    .addComponent(jButton2))))
+                                .addComponent(backUpButton)))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45)
@@ -423,7 +416,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JMenuItem editEntry;
     private javax.swing.JLabel headImage;
     private javax.swing.JMenuItem home;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
