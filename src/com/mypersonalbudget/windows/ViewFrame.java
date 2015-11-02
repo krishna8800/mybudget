@@ -181,14 +181,14 @@ public class ViewFrame extends javax.swing.JFrame {
         viewByDate.setBounds(830, 210, 100, 23);
 
         viewButtonGroup.add(viewByMonth);
-        viewByMonth.setText("View By Month");
+        viewByMonth.setText("By Month");
         viewByMonth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewByMonthActionPerformed(evt);
             }
         });
         jPanel1.add(viewByMonth);
-        viewByMonth.setBounds(940, 210, 100, 23);
+        viewByMonth.setBounds(940, 210, 90, 23);
 
         viewButtonGroup.add(viewBetween);
         viewBetween.setText("B/W Dates");
@@ -198,7 +198,7 @@ public class ViewFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(viewBetween);
-        viewBetween.setBounds(1050, 210, 80, 23);
+        viewBetween.setBounds(1050, 210, 90, 23);
 
         dateText.setText("yyyy-m-dd");
         jPanel1.add(dateText);
@@ -392,7 +392,7 @@ public class ViewFrame extends javax.swing.JFrame {
             String searchkey = searchKey.getText();
             Session session = new SessFactory().getSessionFactory().openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from AddEntry where itemName LIKE '"+searchkey+"%' ORDER BY date DESC");
+            Query query = session.createQuery("from AddEntry where itemName LIKE '"+searchkey+"%' ORDER BY date");
             List<AddEntry> entries = query.list();
 
             for (AddEntry e : entries) {
@@ -465,7 +465,7 @@ public class ViewFrame extends javax.swing.JFrame {
         try{              
             Session session = new SessFactory().getSessionFactory().openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from AddEntry where date = '"+date+"' ORDER BY date DESC");
+            Query query = session.createQuery("from AddEntry where date = '"+date+"' ORDER BY date");
             List<AddEntry> entries = query.list();
             for (AddEntry e : entries) {
                 
@@ -560,7 +560,7 @@ public class ViewFrame extends javax.swing.JFrame {
             int year = (calendar.get(Calendar.YEAR));
             Session session = new SessFactory().getSessionFactory().openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from AddEntry where date BETWEEN '"+d1+"' AND '"+d2+"' ORDER BY date DESC");
+            Query query = session.createQuery("from AddEntry where date BETWEEN '"+d1+"' AND '"+d2+"' ORDER BY date");
             List<AddEntry> entries = query.list();
             for (AddEntry e : entries) {
 
@@ -597,7 +597,7 @@ public class ViewFrame extends javax.swing.JFrame {
             int year = (calendar.get(Calendar.YEAR));
             Session session = new SessFactory().getSessionFactory().openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from AddEntry where date BETWEEN '"+year+"-"+month+"-01' AND '"+year+"-"+month+"-31' ORDER BY date DESC");
+            Query query = session.createQuery("from AddEntry where date BETWEEN '"+year+"-"+month+"-01' AND '"+year+"-"+month+"-31' ORDER BY date");
             List<AddEntry> entries = query.list();
             for (AddEntry e : entries) {
 

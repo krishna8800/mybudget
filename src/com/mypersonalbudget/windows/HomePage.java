@@ -33,11 +33,11 @@ public class HomePage extends javax.swing.JFrame {
         
         Double d1 = new SumOfMonth().getDadSumOfMonth();
         String krishna = d1.toString();
-        jLabel7.setText(krishna);
+        //jLabel7.setText(krishna);
         
         Double d2 = new SumOfMonth().getMomSumOfMonth();
         String mom = d2.toString();
-        jLabel8.setText(mom);
+        //jLabel8.setText(mom);
         /*
         Double d3 = new SumOfMonth().getDadSumOfMonth();
         String dad = d3.toString();
@@ -103,10 +103,6 @@ public class HomePage extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         sumOfThisMonth = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         backUpButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -139,9 +135,10 @@ public class HomePage extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(328, 289, 135, 31);
 
+        jTable1.setBackground(new java.awt.Color(240, 240, 240));
         jTable1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTable1.setFont(new java.awt.Font("Bell MT", 0, 16)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(255, 0, 0));
+        jTable1.setForeground(new java.awt.Color(0, 204, 51));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -170,7 +167,8 @@ public class HomePage extends javax.swing.JFrame {
         });
         jTable1.setAutoscrolls(false);
         jTable1.setGridColor(new java.awt.Color(0, 153, 153));
-        jTable1.setSelectionBackground(new java.awt.Color(255, 0, 0));
+        jTable1.setSelectionBackground(new java.awt.Color(255, 204, 204));
+        jTable1.setSelectionForeground(new java.awt.Color(51, 0, 153));
         jScrollPane2.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane2);
@@ -208,30 +206,6 @@ public class HomePage extends javax.swing.JFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(230, 240, 159, 22);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 51, 153));
-        jLabel3.setText("Venki");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(90, 470, 33, 15);
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel4.setText("Manju");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(280, 470, 38, 15);
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("jLabel7");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(140, 470, 44, 15);
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("jLabel8");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(330, 470, 44, 15);
-
         backUpButton.setText("Back Up Data");
         backUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -250,7 +224,7 @@ public class HomePage extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(419, 240, 190, 23);
         jPanel1.add(jSeparator1);
-        jSeparator1.setBounds(50, 460, 400, 10);
+        jSeparator1.setBounds(50, 500, 720, 10);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/light-blue-wallpaper-5.jpg"))); // NOI18N
         jPanel1.add(jLabel6);
@@ -332,7 +306,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void newEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newEntryActionPerformed
 
-        
+        this.dispose();
         NewEntry ne = new NewEntry();
         ne.setVisible(true);
     }//GEN-LAST:event_newEntryActionPerformed
@@ -400,12 +374,8 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;

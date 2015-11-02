@@ -61,7 +61,7 @@ public class SumOfMonth {
         {
             Session session = new SessFactory().getSessionFactory().openSession();
             session.beginTransaction();
-            Query query1= session.createQuery("select sum(itemCost) from AddEntry where ((date BETWEEN '"+year+"-"+month+"-01' AND '"+year+"-"+month+"-31') AND (moneySpendBy='Manju'))");
+            Query query1= session.createQuery("select sum(itemCost) from AddEntry where ((date BETWEEN '"+year+"-"+month+"-01' AND '"+year+"-"+month+"-31') AND (moneySpendBy='Krishna'))");
             List sum = query1.list();
             session.getTransaction().commit();
             session.close();

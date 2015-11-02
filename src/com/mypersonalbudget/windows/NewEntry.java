@@ -68,7 +68,7 @@ public class NewEntry extends javax.swing.JFrame {
         View = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("New Entry");
         setBackground(new java.awt.Color(51, 255, 255));
         setPreferredSize(new java.awt.Dimension(900, 600));
@@ -87,15 +87,15 @@ public class NewEntry extends javax.swing.JFrame {
         costLabel.setForeground(new java.awt.Color(255, 255, 255));
         costLabel.setText("Cost");
         jPanel1.add(costLabel);
-        costLabel.setBounds(130, 240, 36, 23);
+        costLabel.setBounds(130, 250, 50, 23);
         jPanel1.add(itemName);
-        itemName.setBounds(200, 210, 399, 20);
+        itemName.setBounds(200, 210, 399, 30);
 
         itenNameLabel.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
         itenNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         itenNameLabel.setText("Item Name");
         jPanel1.add(itenNameLabel);
-        itenNameLabel.setBounds(80, 210, 89, 23);
+        itenNameLabel.setBounds(80, 210, 100, 23);
 
         cost.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -103,21 +103,21 @@ public class NewEntry extends javax.swing.JFrame {
             }
         });
         jPanel1.add(cost);
-        cost.setBounds(200, 250, 189, 20);
+        cost.setBounds(200, 250, 189, 30);
 
         dateLabel.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
         dateLabel.setForeground(new java.awt.Color(255, 255, 255));
         dateLabel.setText("Date");
         jPanel1.add(dateLabel);
-        dateLabel.setBounds(130, 270, 39, 23);
+        dateLabel.setBounds(130, 290, 40, 23);
         jPanel1.add(date);
-        date.setBounds(200, 280, 189, 20);
+        date.setBounds(200, 290, 189, 30);
 
         itemDescriptionLabel.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
         itemDescriptionLabel.setForeground(new java.awt.Color(255, 255, 255));
         itemDescriptionLabel.setText("Item Description");
         jPanel1.add(itemDescriptionLabel);
-        itemDescriptionLabel.setBounds(30, 340, 140, 23);
+        itemDescriptionLabel.setBounds(30, 380, 150, 23);
 
         description.setColumns(20);
         description.setRows(5);
@@ -129,7 +129,7 @@ public class NewEntry extends javax.swing.JFrame {
         jScrollPane1.setViewportView(description);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(200, 340, 399, 96);
+        jScrollPane1.setBounds(200, 370, 399, 96);
 
         Submit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Submit  button.png"))); // NOI18N
         Submit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -138,7 +138,7 @@ public class NewEntry extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Submit);
-        Submit.setBounds(200, 460, 111, 40);
+        Submit.setBounds(200, 480, 111, 40);
 
         Clear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/clear button.png"))); // NOI18N
         Clear.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -147,13 +147,13 @@ public class NewEntry extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Clear);
-        Clear.setBounds(330, 460, 92, 40);
+        Clear.setBounds(330, 480, 92, 40);
 
         moneyspend.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
         moneyspend.setForeground(new java.awt.Color(255, 255, 255));
         moneyspend.setText("Money Spend By");
         jPanel1.add(moneyspend);
-        moneyspend.setBounds(30, 310, 138, 23);
+        moneyspend.setBounds(30, 330, 150, 23);
 
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 0));
@@ -161,14 +161,15 @@ public class NewEntry extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(210, 170, 168, 25);
 
-        moneySpendBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Venki", "Manju" }));
+        moneySpendBy.setEditable(true);
+        moneySpendBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Krishna", "Mom", "Dad", "Other" }));
         moneySpendBy.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 moneySpendByKeyPressed(evt);
             }
         });
         jPanel1.add(moneySpendBy);
-        moneySpendBy.setBounds(200, 310, 189, 20);
+        moneySpendBy.setBounds(200, 330, 189, 30);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/New_Entry_Image.png"))); // NOI18N
         jPanel1.add(jLabel2);

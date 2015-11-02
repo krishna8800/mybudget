@@ -95,10 +95,10 @@ public class EditEntry extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         refreshButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
-        moneySpendBy = new javax.swing.JComboBox();
         searchKey = new javax.swing.JTextField();
         SearchButton = new javax.swing.JButton();
         Label_Edit_Page_Head = new javax.swing.JLabel();
+        TF_Money_SpendBy = new javax.swing.JTextField();
         newEntryHeader = new javax.swing.JLabel();
         headImage = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -245,15 +245,11 @@ public class EditEntry extends javax.swing.JFrame {
         jPanel1.add(deleteButton);
         deleteButton.setBounds(940, 131, 70, 23);
 
-        moneySpendBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Venki", "Manju" }));
-        jPanel1.add(moneySpendBy);
-        moneySpendBy.setBounds(940, 340, 189, 30);
-
         searchKey.setForeground(new java.awt.Color(204, 204, 204));
         searchKey.setText("Search");
         searchKey.setToolTipText("Search Here");
         jPanel1.add(searchKey);
-        searchKey.setBounds(10, 140, 190, 20);
+        searchKey.setBounds(10, 140, 190, 30);
 
         SearchButton.setText("Search");
         SearchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -262,7 +258,7 @@ public class EditEntry extends javax.swing.JFrame {
             }
         });
         jPanel1.add(SearchButton);
-        SearchButton.setBounds(210, 140, 80, 23);
+        SearchButton.setBounds(210, 140, 80, 30);
 
         Label_Edit_Page_Head.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Label_Edit_Page_Head.setForeground(new java.awt.Color(255, 0, 51));
@@ -270,6 +266,8 @@ public class EditEntry extends javax.swing.JFrame {
         Label_Edit_Page_Head.setText("Edit Page");
         jPanel1.add(Label_Edit_Page_Head);
         Label_Edit_Page_Head.setBounds(10, 180, 790, 30);
+        jPanel1.add(TF_Money_SpendBy);
+        TF_Money_SpendBy.setBounds(940, 340, 190, 30);
 
         newEntryHeader.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         newEntryHeader.setForeground(new java.awt.Color(255, 255, 0));
@@ -370,7 +368,7 @@ public class EditEntry extends javax.swing.JFrame {
             query.setParameter("cost",Double.parseDouble(cost.getText()));
             query.setParameter("d", date.getText());
             query.setParameter("desc",description.getText());
-            query.setParameter("money",moneySpendBy.getSelectedItem());
+            query.setParameter("money",TF_Money_SpendBy.getText());
             int i = query.executeUpdate();
             if(i>0){
             JOptionPane.showMessageDialog(this,"Updated Successfully.");
@@ -446,7 +444,7 @@ public class EditEntry extends javax.swing.JFrame {
                 itemName.setText(e.getItemName());
                 cost.setText(e.getItemCost().toString());
                 date.setText(e.getDate());
-                moneySpendBy.setSelectedItem(e.getMoneySpendBy());
+                TF_Money_SpendBy.setText(e.getMoneySpendBy());
                 description.setText(e.getItemDesc());
 
             }
@@ -513,7 +511,7 @@ public class EditEntry extends javax.swing.JFrame {
         SimpleDateFormat ft = new SimpleDateFormat("dd/M/YYYY");
         String entryDate = ft.format(dNow);*/
         date.setText(null);
-        moneySpendBy.setSelectedItem("     ");
+        TF_Money_SpendBy.setText(null);
         description.setText(null);
         updateTable();
         Double d = new SumOfMonth().getSumOfMonth();
@@ -533,7 +531,7 @@ public class EditEntry extends javax.swing.JFrame {
             String searchkey = searchKey.getText();
             Session session = new SessFactory().getSessionFactory().openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from AddEntry where itemName LIKE '"+searchkey+"%' ORDER BY date DESC");
+            Query query = session.createQuery("from AddEntry where itemName LIKE '"+searchkey+"%' ORDER BY date");
             List<AddEntry> entries = query.list();
             
             for (AddEntry e : entries) {
@@ -634,6 +632,7 @@ public class EditEntry extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Edit_Page_Head;
     private javax.swing.JButton SearchButton;
     private javax.swing.JLabel Submit;
+    private javax.swing.JTextField TF_Money_SpendBy;
     private javax.swing.JMenu View;
     private javax.swing.JTextField cost;
     private javax.swing.JLabel costLabel;
@@ -653,7 +652,6 @@ public class EditEntry extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JComboBox moneySpendBy;
     private javax.swing.JLabel moneyspend;
     private javax.swing.JMenuItem newEntry;
     private javax.swing.JLabel newEntryHeader;
