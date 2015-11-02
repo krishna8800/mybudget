@@ -148,7 +148,7 @@ public class ViewFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(refreshButton);
-        refreshButton.setBounds(640, 180, 71, 23);
+        refreshButton.setBounds(630, 140, 90, 30);
 
         deleteButton.setText("Delete");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -157,9 +157,9 @@ public class ViewFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(deleteButton);
-        deleteButton.setBounds(730, 180, 63, 23);
+        deleteButton.setBounds(740, 140, 90, 30);
         jPanel1.add(searchKey);
-        searchKey.setBounds(10, 140, 159, 20);
+        searchKey.setBounds(10, 140, 170, 30);
 
         SearchButton.setText("Search");
         SearchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +168,7 @@ public class ViewFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(SearchButton);
-        SearchButton.setBounds(180, 140, 65, 23);
+        SearchButton.setBounds(200, 140, 80, 30);
 
         viewButtonGroup.add(viewByDate);
         viewByDate.setText("View By Date");
@@ -178,7 +178,7 @@ public class ViewFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(viewByDate);
-        viewByDate.setBounds(830, 210, 89, 23);
+        viewByDate.setBounds(830, 210, 100, 23);
 
         viewButtonGroup.add(viewByMonth);
         viewByMonth.setText("View By Month");
@@ -188,7 +188,7 @@ public class ViewFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(viewByMonth);
-        viewByMonth.setBounds(940, 210, 95, 23);
+        viewByMonth.setBounds(940, 210, 100, 23);
 
         viewButtonGroup.add(viewBetween);
         viewBetween.setText("B/W Dates");
@@ -202,23 +202,23 @@ public class ViewFrame extends javax.swing.JFrame {
 
         dateText.setText("yyyy-m-dd");
         jPanel1.add(dateText);
-        dateText.setBounds(830, 250, 89, 20);
+        dateText.setBounds(830, 250, 89, 30);
 
         monthNo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
         jPanel1.add(monthNo);
-        monthNo.setBounds(940, 250, 95, 20);
+        monthNo.setBounds(940, 250, 95, 30);
 
         date1.setText("yyyy-m-dd");
         jPanel1.add(date1);
-        date1.setBounds(1050, 250, 80, 20);
+        date1.setBounds(1050, 250, 80, 30);
 
         andLable.setText("And");
         jPanel1.add(andLable);
-        andLable.setBounds(1080, 280, 19, 14);
+        andLable.setBounds(1070, 280, 19, 14);
 
         date2.setText("yyyy-m-dd");
         jPanel1.add(date2);
-        date2.setBounds(1050, 300, 80, 20);
+        date2.setBounds(1050, 300, 80, 30);
 
         searchDate.setText("Search");
         searchDate.addActionListener(new java.awt.event.ActionListener() {
@@ -227,7 +227,7 @@ public class ViewFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(searchDate);
-        searchDate.setBounds(830, 300, 65, 23);
+        searchDate.setBounds(830, 300, 80, 30);
 
         searchMonth.setText("Search");
         searchMonth.addActionListener(new java.awt.event.ActionListener() {
@@ -236,7 +236,7 @@ public class ViewFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(searchMonth);
-        searchMonth.setBounds(940, 300, 65, 23);
+        searchMonth.setBounds(940, 300, 80, 30);
 
         searchBetweenDates.setText("Search");
         searchBetweenDates.addActionListener(new java.awt.event.ActionListener() {
@@ -245,7 +245,7 @@ public class ViewFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(searchBetweenDates);
-        searchBetweenDates.setBounds(1050, 340, 65, 23);
+        searchBetweenDates.setBounds(1050, 340, 80, 30);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Selected Item Id");
@@ -492,7 +492,7 @@ public class ViewFrame extends javax.swing.JFrame {
 
     public void refresh(){
     
-        
+        sumOfResult.setText("");
         DefaultTableModel tablemodel =(DefaultTableModel) jTable1.getModel();
         tablemodel.setNumRows(0);
         jLabel1.setVisible(false);

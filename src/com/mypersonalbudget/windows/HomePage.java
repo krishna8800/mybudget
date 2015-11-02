@@ -109,6 +109,7 @@ public class HomePage extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         backUpButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         File = new javax.swing.JMenu();
@@ -130,7 +131,7 @@ public class HomePage extends javax.swing.JFrame {
         headImage.setMaximumSize(new java.awt.Dimension(1100, 120));
         headImage.setPreferredSize(new java.awt.Dimension(1100, 120));
         jPanel1.add(headImage);
-        headImage.setBounds(0, 0, 1152, 120);
+        headImage.setBounds(0, 0, 1150, 120);
 
         jLabel1.setFont(new java.awt.Font("Bradley Hand ITC", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -175,10 +176,10 @@ public class HomePage extends javax.swing.JFrame {
         jPanel1.add(jScrollPane2);
         jScrollPane2.setBounds(44, 338, 726, 93);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/vector_flower.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/floral-vector4.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(813, 132, 288, 501);
+        jLabel2.setBounds(813, 132, 310, 501);
 
         jLabel5.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -211,25 +212,25 @@ public class HomePage extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 51, 153));
         jLabel3.setText("Venki");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(290, 470, 33, 15);
+        jLabel3.setBounds(90, 470, 33, 15);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 153));
         jLabel4.setText("Manju");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(290, 490, 38, 15);
+        jLabel4.setBounds(280, 470, 38, 15);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("jLabel7");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(360, 470, 44, 15);
+        jLabel7.setBounds(140, 470, 44, 15);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("jLabel8");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(360, 490, 44, 15);
+        jLabel8.setBounds(330, 470, 44, 15);
 
         backUpButton.setText("Back Up Data");
         backUpButton.addActionListener(new java.awt.event.ActionListener() {
@@ -238,7 +239,7 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
         jPanel1.add(backUpButton);
-        backUpButton.setBounds(673, 240, 97, 23);
+        backUpButton.setBounds(630, 240, 120, 23);
 
         jButton1.setText("Export Total Data To Excel");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -247,7 +248,9 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(419, 240, 161, 23);
+        jButton1.setBounds(419, 240, 190, 23);
+        jPanel1.add(jSeparator1);
+        jSeparator1.setBounds(50, 460, 400, 10);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/light-blue-wallpaper-5.jpg"))); // NOI18N
         jPanel1.add(jLabel6);
@@ -316,14 +319,14 @@ public class HomePage extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1145, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(1168, 703));
+        setSize(new java.awt.Dimension(1161, 697));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -408,6 +411,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     private javax.swing.JMenuItem newEntry;
     private javax.swing.JLabel sumOfThisMonth;

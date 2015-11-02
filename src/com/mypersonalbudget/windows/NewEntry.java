@@ -54,10 +54,9 @@ public class NewEntry extends javax.swing.JFrame {
         Clear = new javax.swing.JLabel();
         moneyspend = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        sumOfThisMonth = new javax.swing.JLabel();
         moneySpendBy = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
+        sumOfThisMonth = new javax.swing.JLabel();
         newEntryHeader = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         File = new javax.swing.JMenu();
@@ -162,29 +161,6 @@ public class NewEntry extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(210, 170, 168, 25);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        sumOfThisMonth.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        sumOfThisMonth.setForeground(new java.awt.Color(204, 0, 0));
-        sumOfThisMonth.setText("jLabel2");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(sumOfThisMonth)
-                .addContainerGap(51, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sumOfThisMonth, javax.swing.GroupLayout.Alignment.TRAILING)
-        );
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(390, 170, 159, 26);
-
         moneySpendBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Venki", "Manju" }));
         moneySpendBy.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -197,6 +173,12 @@ public class NewEntry extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/New_Entry_Image.png"))); // NOI18N
         jPanel1.add(jLabel2);
         jLabel2.setBounds(640, 150, 230, 360);
+
+        sumOfThisMonth.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        sumOfThisMonth.setForeground(new java.awt.Color(204, 0, 0));
+        sumOfThisMonth.setText("jLabel2");
+        jPanel1.add(sumOfThisMonth);
+        sumOfThisMonth.setBounds(410, 170, 180, 22);
 
         newEntryHeader.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         newEntryHeader.setForeground(new java.awt.Color(255, 255, 0));
@@ -441,7 +423,6 @@ public class NewEntry extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox moneySpendBy;
     private javax.swing.JLabel moneyspend;

@@ -65,7 +65,7 @@ public class EditEntry extends javax.swing.JFrame {
         
         Double d = new SumOfMonth().getSumOfMonth();
         String sum = d.toString();
-        sumOfThisMonth.setText(sum);
+        //sumOfThisMonth.setText(sum);
         
        
     }
@@ -95,9 +95,6 @@ public class EditEntry extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         refreshButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
-        Label_Month_Total = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        sumOfThisMonth = new javax.swing.JLabel();
         moneySpendBy = new javax.swing.JComboBox();
         searchKey = new javax.swing.JTextField();
         SearchButton = new javax.swing.JButton();
@@ -120,42 +117,42 @@ public class EditEntry extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
         jPanel1.setLayout(null);
         jPanel1.add(itemName);
-        itemName.setBounds(940, 170, 189, 20);
+        itemName.setBounds(940, 220, 189, 30);
 
         costLabel.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         costLabel.setForeground(new java.awt.Color(255, 255, 255));
         costLabel.setText("Cost");
         jPanel1.add(costLabel);
-        costLabel.setBounds(830, 200, 36, 23);
+        costLabel.setBounds(830, 260, 36, 23);
 
         itenNameLabel.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         itenNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         itenNameLabel.setText("Item Name");
         jPanel1.add(itenNameLabel);
-        itenNameLabel.setBounds(830, 170, 89, 23);
+        itenNameLabel.setBounds(830, 220, 89, 23);
         jPanel1.add(cost);
-        cost.setBounds(940, 200, 189, 20);
+        cost.setBounds(940, 260, 189, 30);
 
         dateLabel.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         dateLabel.setForeground(new java.awt.Color(255, 255, 255));
         dateLabel.setText("Date");
         jPanel1.add(dateLabel);
-        dateLabel.setBounds(830, 230, 30, 18);
+        dateLabel.setBounds(830, 300, 30, 18);
         jPanel1.add(date);
-        date.setBounds(940, 230, 189, 20);
+        date.setBounds(940, 300, 189, 30);
 
         itemDescriptionLabel.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         itemDescriptionLabel.setForeground(new java.awt.Color(255, 255, 255));
         itemDescriptionLabel.setText("Item Description");
         jPanel1.add(itemDescriptionLabel);
-        itemDescriptionLabel.setBounds(830, 300, 106, 18);
+        itemDescriptionLabel.setBounds(830, 390, 106, 18);
 
         description.setColumns(20);
         description.setRows(5);
         jScrollPane1.setViewportView(description);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(940, 290, 189, 96);
+        jScrollPane1.setBounds(940, 380, 190, 96);
 
         Submit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Submit  button.png"))); // NOI18N
         Submit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -164,7 +161,7 @@ public class EditEntry extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Submit);
-        Submit.setBounds(900, 400, 111, 40);
+        Submit.setBounds(910, 520, 111, 40);
 
         Clear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/clear button.png"))); // NOI18N
         Clear.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -173,13 +170,13 @@ public class EditEntry extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Clear);
-        Clear.setBounds(1030, 400, 92, 40);
+        Clear.setBounds(1040, 520, 92, 40);
 
         moneyspend.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         moneyspend.setForeground(new java.awt.Color(255, 255, 255));
         moneyspend.setText("Money Spend By");
         jPanel1.add(moneyspend);
-        moneyspend.setBounds(830, 260, 105, 18);
+        moneyspend.setBounds(830, 340, 105, 20);
 
         jTable1.setAutoCreateRowSorter(true);
         jTable1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -237,7 +234,7 @@ public class EditEntry extends javax.swing.JFrame {
             }
         });
         jPanel1.add(refreshButton);
-        refreshButton.setBounds(838, 131, 71, 23);
+        refreshButton.setBounds(838, 131, 80, 23);
 
         deleteButton.setText("Delete");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -246,44 +243,17 @@ public class EditEntry extends javax.swing.JFrame {
             }
         });
         jPanel1.add(deleteButton);
-        deleteButton.setBounds(940, 131, 63, 23);
-
-        Label_Month_Total.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
-        Label_Month_Total.setForeground(new java.awt.Color(0, 153, 51));
-        Label_Month_Total.setText("This Month Total  :");
-        jPanel1.add(Label_Month_Total);
-        Label_Month_Total.setBounds(460, 131, 168, 25);
-
-        sumOfThisMonth.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
-        sumOfThisMonth.setForeground(new java.awt.Color(204, 0, 0));
-        sumOfThisMonth.setText("jLabel2");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(sumOfThisMonth)
-                .addContainerGap(49, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sumOfThisMonth, javax.swing.GroupLayout.Alignment.TRAILING)
-        );
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(646, 135, 159, 22);
+        deleteButton.setBounds(940, 131, 70, 23);
 
         moneySpendBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Venki", "Manju" }));
         jPanel1.add(moneySpendBy);
-        moneySpendBy.setBounds(940, 260, 189, 20);
+        moneySpendBy.setBounds(940, 340, 189, 30);
 
         searchKey.setForeground(new java.awt.Color(204, 204, 204));
         searchKey.setText("Search");
         searchKey.setToolTipText("Search Here");
         jPanel1.add(searchKey);
-        searchKey.setBounds(10, 130, 159, 20);
+        searchKey.setBounds(10, 140, 190, 20);
 
         SearchButton.setText("Search");
         SearchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -292,21 +262,21 @@ public class EditEntry extends javax.swing.JFrame {
             }
         });
         jPanel1.add(SearchButton);
-        SearchButton.setBounds(180, 130, 65, 23);
+        SearchButton.setBounds(210, 140, 80, 23);
 
         Label_Edit_Page_Head.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Label_Edit_Page_Head.setForeground(new java.awt.Color(255, 0, 51));
         Label_Edit_Page_Head.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Label_Edit_Page_Head.setText("Edit Page");
         jPanel1.add(Label_Edit_Page_Head);
-        Label_Edit_Page_Head.setBounds(10, 171, 790, 29);
+        Label_Edit_Page_Head.setBounds(10, 180, 790, 30);
 
         newEntryHeader.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         newEntryHeader.setForeground(new java.awt.Color(255, 255, 0));
         newEntryHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         newEntryHeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/light-blue-wallpaper-5.jpg"))); // NOI18N
         jPanel1.add(newEntryHeader);
-        newEntryHeader.setBounds(0, 121, 1150, 520);
+        newEntryHeader.setBounds(0, 120, 1150, 470);
 
         headImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/head1 (2).jpg"))); // NOI18N
         headImage.setMaximumSize(new java.awt.Dimension(1100, 120));
@@ -377,15 +347,11 @@ public class EditEntry extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1153, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1153, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -425,7 +391,7 @@ public class EditEntry extends javax.swing.JFrame {
         ClearMouseClicked(evt);
         Double d = new SumOfMonth().getSumOfMonth();
         String sum = d.toString();
-        sumOfThisMonth.setText(sum);
+        //sumOfThisMonth.setText(sum);
     }//GEN-LAST:event_SubmitMouseClicked
 
     public void updateTable(){
@@ -456,7 +422,7 @@ public class EditEntry extends javax.swing.JFrame {
         
         Double d = new SumOfMonth().getSumOfMonth();
         String sum = d.toString();
-        sumOfThisMonth.setText(sum);
+        //sumOfThisMonth.setText(sum);
     
     
     
@@ -500,7 +466,7 @@ public class EditEntry extends javax.swing.JFrame {
         ClearMouseClicked(null);
         Double d = new SumOfMonth().getSumOfMonth();
         String sum = d.toString();
-        sumOfThisMonth.setText(sum);
+        //sumOfThisMonth.setText(sum);
         
     }//GEN-LAST:event_refreshButtonActionPerformed
 
@@ -535,7 +501,7 @@ public class EditEntry extends javax.swing.JFrame {
         ClearMouseClicked(null);
         Double d = new SumOfMonth().getSumOfMonth();
         String sum = d.toString();
-        sumOfThisMonth.setText(sum);
+        //sumOfThisMonth.setText(sum);
         
     }//GEN-LAST:event_deleteButtonActionPerformed
 
@@ -552,7 +518,7 @@ public class EditEntry extends javax.swing.JFrame {
         updateTable();
         Double d = new SumOfMonth().getSumOfMonth();
         String sum = d.toString();
-        sumOfThisMonth.setText(sum);
+        //sumOfThisMonth.setText(sum);
         
         
         
@@ -666,7 +632,6 @@ public class EditEntry extends javax.swing.JFrame {
     private javax.swing.JMenu Edit;
     private javax.swing.JMenu File;
     private javax.swing.JLabel Label_Edit_Page_Head;
-    private javax.swing.JLabel Label_Month_Total;
     private javax.swing.JButton SearchButton;
     private javax.swing.JLabel Submit;
     private javax.swing.JMenu View;
@@ -685,7 +650,6 @@ public class EditEntry extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
@@ -695,7 +659,6 @@ public class EditEntry extends javax.swing.JFrame {
     private javax.swing.JLabel newEntryHeader;
     private javax.swing.JButton refreshButton;
     private javax.swing.JTextField searchKey;
-    private javax.swing.JLabel sumOfThisMonth;
     // End of variables declaration//GEN-END:variables
 
 
