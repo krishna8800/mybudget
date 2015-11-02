@@ -79,10 +79,8 @@ public class EditEntry extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        headImage = new javax.swing.JLabel();
-        newEntryHeader = new javax.swing.JLabel();
-        costLabel = new javax.swing.JLabel();
         itemName = new javax.swing.JTextField();
+        costLabel = new javax.swing.JLabel();
         itenNameLabel = new javax.swing.JLabel();
         cost = new javax.swing.JTextField();
         dateLabel = new javax.swing.JLabel();
@@ -97,12 +95,15 @@ public class EditEntry extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         refreshButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        Label_Month_Total = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         sumOfThisMonth = new javax.swing.JLabel();
         moneySpendBy = new javax.swing.JComboBox();
         searchKey = new javax.swing.JTextField();
         SearchButton = new javax.swing.JButton();
+        Label_Edit_Page_Head = new javax.swing.JLabel();
+        newEntryHeader = new javax.swing.JLabel();
+        headImage = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         File = new javax.swing.JMenu();
         newEntry = new javax.swing.JMenuItem();
@@ -114,37 +115,47 @@ public class EditEntry extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Edit Entry");
+        setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 153, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setLayout(null);
+        jPanel1.add(itemName);
+        itemName.setBounds(940, 170, 189, 20);
 
-        headImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/head1.jpg"))); // NOI18N
-        headImage.setMaximumSize(new java.awt.Dimension(1100, 120));
-        headImage.setPreferredSize(new java.awt.Dimension(1100, 120));
-
-        newEntryHeader.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        newEntryHeader.setForeground(new java.awt.Color(255, 255, 0));
-        newEntryHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        newEntryHeader.setText("Edit Entry");
-
-        costLabel.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
+        costLabel.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         costLabel.setForeground(new java.awt.Color(255, 255, 255));
         costLabel.setText("Cost");
+        jPanel1.add(costLabel);
+        costLabel.setBounds(830, 200, 36, 23);
 
-        itenNameLabel.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
+        itenNameLabel.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         itenNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         itenNameLabel.setText("Item Name");
+        jPanel1.add(itenNameLabel);
+        itenNameLabel.setBounds(830, 170, 89, 23);
+        jPanel1.add(cost);
+        cost.setBounds(940, 200, 189, 20);
 
-        dateLabel.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
+        dateLabel.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         dateLabel.setForeground(new java.awt.Color(255, 255, 255));
         dateLabel.setText("Date");
+        jPanel1.add(dateLabel);
+        dateLabel.setBounds(830, 230, 30, 18);
+        jPanel1.add(date);
+        date.setBounds(940, 230, 189, 20);
 
-        itemDescriptionLabel.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
+        itemDescriptionLabel.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         itemDescriptionLabel.setForeground(new java.awt.Color(255, 255, 255));
         itemDescriptionLabel.setText("Item Description");
+        jPanel1.add(itemDescriptionLabel);
+        itemDescriptionLabel.setBounds(830, 300, 106, 18);
 
         description.setColumns(20);
         description.setRows(5);
         jScrollPane1.setViewportView(description);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(940, 290, 189, 96);
 
         Submit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Submit  button.png"))); // NOI18N
         Submit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -152,6 +163,8 @@ public class EditEntry extends javax.swing.JFrame {
                 SubmitMouseClicked(evt);
             }
         });
+        jPanel1.add(Submit);
+        Submit.setBounds(900, 400, 111, 40);
 
         Clear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/clear button.png"))); // NOI18N
         Clear.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -159,16 +172,19 @@ public class EditEntry extends javax.swing.JFrame {
                 ClearMouseClicked(evt);
             }
         });
+        jPanel1.add(Clear);
+        Clear.setBounds(1030, 400, 92, 40);
 
-        moneyspend.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
+        moneyspend.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         moneyspend.setForeground(new java.awt.Color(255, 255, 255));
         moneyspend.setText("Money Spend By");
+        jPanel1.add(moneyspend);
+        moneyspend.setBounds(830, 260, 105, 18);
 
         jTable1.setAutoCreateRowSorter(true);
-        jTable1.setBackground(new java.awt.Color(204, 255, 255));
         jTable1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jTable1.setFont(new java.awt.Font("Baskerville Old Face", 0, 16)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 51, 51));
+        jTable1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(204, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -195,11 +211,11 @@ public class EditEntry extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setGridColor(new java.awt.Color(0, 153, 153));
+        jTable1.setGridColor(new java.awt.Color(102, 255, 102));
         jTable1.setRequestFocusEnabled(false);
         jTable1.setRowHeight(24);
-        jTable1.setSelectionBackground(new java.awt.Color(0, 0, 153));
-        jTable1.setSelectionForeground(new java.awt.Color(255, 255, 0));
+        jTable1.setSelectionBackground(new java.awt.Color(255, 255, 153));
+        jTable1.setSelectionForeground(new java.awt.Color(0, 51, 51));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -211,12 +227,17 @@ public class EditEntry extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(0).setPreferredWidth(4);
         }
 
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(10, 215, 795, 350);
+
         refreshButton.setText("Refresh");
         refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(refreshButton);
+        refreshButton.setBounds(838, 131, 71, 23);
 
         deleteButton.setText("Delete");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -224,10 +245,14 @@ public class EditEntry extends javax.swing.JFrame {
                 deleteButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(deleteButton);
+        deleteButton.setBounds(940, 131, 63, 23);
 
-        jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("This Month Total  :");
+        Label_Month_Total.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        Label_Month_Total.setForeground(new java.awt.Color(0, 153, 51));
+        Label_Month_Total.setText("This Month Total  :");
+        jPanel1.add(Label_Month_Total);
+        Label_Month_Total.setBounds(460, 131, 168, 25);
 
         sumOfThisMonth.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
         sumOfThisMonth.setForeground(new java.awt.Color(204, 0, 0));
@@ -247,7 +272,18 @@ public class EditEntry extends javax.swing.JFrame {
             .addComponent(sumOfThisMonth, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(646, 135, 159, 22);
+
         moneySpendBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Venki", "Manju" }));
+        jPanel1.add(moneySpendBy);
+        moneySpendBy.setBounds(940, 260, 189, 20);
+
+        searchKey.setForeground(new java.awt.Color(204, 204, 204));
+        searchKey.setText("Search");
+        searchKey.setToolTipText("Search Here");
+        jPanel1.add(searchKey);
+        searchKey.setBounds(10, 130, 159, 20);
 
         SearchButton.setText("Search");
         SearchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -255,109 +291,28 @@ public class EditEntry extends javax.swing.JFrame {
                 SearchButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(SearchButton);
+        SearchButton.setBounds(180, 130, 65, 23);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(headImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(newEntryHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(searchKey, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(SearchButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 795, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(Submit)
-                                .addGap(18, 18, 18)
-                                .addComponent(Clear))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(itemDescriptionLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(moneyspend)
-                                    .addComponent(dateLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(date, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                                    .addComponent(moneySpendBy, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(costLabel)
-                                    .addComponent(itenNameLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(itemName, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cost, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(refreshButton)
-                        .addGap(31, 31, 31)
-                        .addComponent(deleteButton)))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(headImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(refreshButton)
-                        .addComponent(deleteButton))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(searchKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SearchButton)))
-                    .addComponent(newEntryHeader))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(itemName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(itenNameLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(costLabel)
-                            .addComponent(cost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(dateLabel)
-                            .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(moneyspend)
-                            .addComponent(moneySpendBy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Submit)
-                                    .addComponent(Clear)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(itemDescriptionLabel))))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(49, Short.MAX_VALUE))
-        );
+        Label_Edit_Page_Head.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Label_Edit_Page_Head.setForeground(new java.awt.Color(255, 0, 51));
+        Label_Edit_Page_Head.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_Edit_Page_Head.setText("Edit Page");
+        jPanel1.add(Label_Edit_Page_Head);
+        Label_Edit_Page_Head.setBounds(10, 171, 790, 29);
+
+        newEntryHeader.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        newEntryHeader.setForeground(new java.awt.Color(255, 255, 0));
+        newEntryHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        newEntryHeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/light-blue-wallpaper-5.jpg"))); // NOI18N
+        jPanel1.add(newEntryHeader);
+        newEntryHeader.setBounds(0, 121, 1150, 520);
+
+        headImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/head1 (2).jpg"))); // NOI18N
+        headImage.setMaximumSize(new java.awt.Dimension(1100, 120));
+        headImage.setPreferredSize(new java.awt.Dimension(1100, 120));
+        jPanel1.add(headImage);
+        headImage.setBounds(0, 0, 1172, 120);
 
         jMenuBar1.setBackground(new java.awt.Color(-14336,true));
         jMenuBar1.setAutoscrolls(true);
@@ -422,11 +377,15 @@ public class EditEntry extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1153, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -706,6 +665,8 @@ public class EditEntry extends javax.swing.JFrame {
     private javax.swing.JLabel Clear;
     private javax.swing.JMenu Edit;
     private javax.swing.JMenu File;
+    private javax.swing.JLabel Label_Edit_Page_Head;
+    private javax.swing.JLabel Label_Month_Total;
     private javax.swing.JButton SearchButton;
     private javax.swing.JLabel Submit;
     private javax.swing.JMenu View;
@@ -721,7 +682,6 @@ public class EditEntry extends javax.swing.JFrame {
     private javax.swing.JLabel itemDescriptionLabel;
     private javax.swing.JTextField itemName;
     private javax.swing.JLabel itenNameLabel;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;

@@ -121,6 +121,7 @@ public class HomePage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home Page");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
         jPanel1.setLayout(null);
@@ -328,7 +329,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void newEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newEntryActionPerformed
 
-        this.dispose();
+        
         NewEntry ne = new NewEntry();
         ne.setVisible(true);
     }//GEN-LAST:event_newEntryActionPerformed

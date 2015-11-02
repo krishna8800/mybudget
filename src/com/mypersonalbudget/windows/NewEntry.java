@@ -41,7 +41,6 @@ public class NewEntry extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         headImage = new javax.swing.JLabel();
-        newEntryHeader = new javax.swing.JLabel();
         costLabel = new javax.swing.JLabel();
         itemName = new javax.swing.JTextField();
         itenNameLabel = new javax.swing.JLabel();
@@ -58,6 +57,8 @@ public class NewEntry extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         sumOfThisMonth = new javax.swing.JLabel();
         moneySpendBy = new javax.swing.JComboBox();
+        jLabel2 = new javax.swing.JLabel();
+        newEntryHeader = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         File = new javax.swing.JMenu();
         newEntry = new javax.swing.JMenuItem();
@@ -68,43 +69,56 @@ public class NewEntry extends javax.swing.JFrame {
         View = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("New Entry");
         setBackground(new java.awt.Color(51, 255, 255));
-        setPreferredSize(new java.awt.Dimension(1100, 700));
+        setPreferredSize(new java.awt.Dimension(900, 600));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 153, 204));
+        jPanel1.setLayout(null);
 
-        headImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/head1.jpg"))); // NOI18N
+        headImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/head1 (2).jpg"))); // NOI18N
         headImage.setMaximumSize(new java.awt.Dimension(1100, 120));
         headImage.setPreferredSize(new java.awt.Dimension(1100, 120));
-
-        newEntryHeader.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        newEntryHeader.setForeground(new java.awt.Color(255, 255, 0));
-        newEntryHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        newEntryHeader.setText("New Entry");
+        jPanel1.add(headImage);
+        headImage.setBounds(0, 0, 890, 120);
 
         costLabel.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
         costLabel.setForeground(new java.awt.Color(255, 255, 255));
         costLabel.setText("Cost");
+        jPanel1.add(costLabel);
+        costLabel.setBounds(130, 240, 36, 23);
+        jPanel1.add(itemName);
+        itemName.setBounds(200, 210, 399, 20);
 
         itenNameLabel.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
         itenNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         itenNameLabel.setText("Item Name");
+        jPanel1.add(itenNameLabel);
+        itenNameLabel.setBounds(80, 210, 89, 23);
 
         cost.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 costKeyPressed(evt);
             }
         });
+        jPanel1.add(cost);
+        cost.setBounds(200, 250, 189, 20);
 
         dateLabel.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
         dateLabel.setForeground(new java.awt.Color(255, 255, 255));
         dateLabel.setText("Date");
+        jPanel1.add(dateLabel);
+        dateLabel.setBounds(130, 270, 39, 23);
+        jPanel1.add(date);
+        date.setBounds(200, 280, 189, 20);
 
         itemDescriptionLabel.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
         itemDescriptionLabel.setForeground(new java.awt.Color(255, 255, 255));
         itemDescriptionLabel.setText("Item Description");
+        jPanel1.add(itemDescriptionLabel);
+        itemDescriptionLabel.setBounds(30, 340, 140, 23);
 
         description.setColumns(20);
         description.setRows(5);
@@ -115,12 +129,17 @@ public class NewEntry extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(description);
 
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(200, 340, 399, 96);
+
         Submit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Submit  button.png"))); // NOI18N
         Submit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SubmitMouseClicked(evt);
             }
         });
+        jPanel1.add(Submit);
+        Submit.setBounds(200, 460, 111, 40);
 
         Clear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/clear button.png"))); // NOI18N
         Clear.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -128,14 +147,22 @@ public class NewEntry extends javax.swing.JFrame {
                 ClearMouseClicked(evt);
             }
         });
+        jPanel1.add(Clear);
+        Clear.setBounds(330, 460, 92, 40);
 
         moneyspend.setFont(new java.awt.Font("Aller", 1, 18)); // NOI18N
         moneyspend.setForeground(new java.awt.Color(255, 255, 255));
         moneyspend.setText("Money Spend By");
+        jPanel1.add(moneyspend);
+        moneyspend.setBounds(30, 310, 138, 23);
 
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
         jLabel1.setText("This Month Total  :");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(210, 170, 168, 25);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         sumOfThisMonth.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
         sumOfThisMonth.setForeground(new java.awt.Color(204, 0, 0));
@@ -146,14 +173,17 @@ public class NewEntry extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(36, 36, 36)
                 .addComponent(sumOfThisMonth)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sumOfThisMonth, javax.swing.GroupLayout.Alignment.TRAILING)
         );
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(390, 170, 159, 26);
 
         moneySpendBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Venki", "Manju" }));
         moneySpendBy.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -161,78 +191,19 @@ public class NewEntry extends javax.swing.JFrame {
                 moneySpendByKeyPressed(evt);
             }
         });
+        jPanel1.add(moneySpendBy);
+        moneySpendBy.setBounds(200, 310, 189, 20);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(headImage, javax.swing.GroupLayout.DEFAULT_SIZE, 1156, Short.MAX_VALUE)
-            .addComponent(newEntryHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(175, 175, 175)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(moneyspend)
-                            .addComponent(costLabel)
-                            .addComponent(dateLabel)
-                            .addComponent(itenNameLabel))
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(itemName, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Submit)
-                                .addGap(18, 18, 18)
-                                .addComponent(Clear))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(moneySpendBy, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(date, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cost, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))))
-                    .addComponent(itemDescriptionLabel)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(headImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(newEntryHeader)
-                .addGap(13, 13, 13)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(itemName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(itenNameLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(costLabel)
-                    .addComponent(cost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dateLabel)
-                    .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(moneyspend)
-                    .addComponent(moneySpendBy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(itemDescriptionLabel))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Submit)
-                    .addComponent(Clear))
-                .addContainerGap(87, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/New_Entry_Image.png"))); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(640, 150, 230, 360);
+
+        newEntryHeader.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        newEntryHeader.setForeground(new java.awt.Color(255, 255, 0));
+        newEntryHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        newEntryHeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/light-blue-wallpaper-5.jpg"))); // NOI18N
+        jPanel1.add(newEntryHeader);
+        newEntryHeader.setBounds(0, 120, 890, 430);
 
         jMenuBar1.setBackground(new java.awt.Color(-14336,true));
         jMenuBar1.setAutoscrolls(true);
@@ -301,11 +272,11 @@ public class NewEntry extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 890, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE)
         );
 
         pack();
@@ -466,6 +437,7 @@ public class NewEntry extends javax.swing.JFrame {
     private javax.swing.JTextField itemName;
     private javax.swing.JLabel itenNameLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
